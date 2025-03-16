@@ -1,22 +1,21 @@
 import time
 
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.devtools.v131.fed_cm import click_dialog_button
 
 # Define Variables
-URL = "https://www.saucedemo.com/inventory.html"
-USERNAME = "locked_out_user"
+URL = "https://www.saucedemo.com/"
+USERNAME = "standard_user"
 Password = "secret_sauce"
-Wait_time = 5.0
+Wait_time = 2
 
 # Launch Chrome Browser using selenium webdriver
 driver = webdriver.Chrome()
 
 # Navigate to the Login Page
 driver.get(URL)
-time.sleep(5)
+driver.maximize_window()
+time.sleep(Wait_time)
 
 # Enter Username
 driver.find_element(By.ID, "user-name").send_keys(USERNAME)
@@ -31,7 +30,6 @@ driver.find_element(By.ID,"login-button").click()
 time.sleep(Wait_time)
 
 # Add Product to the Cart
-
 
 # Click on Sauce Labs Backpack Add to cart
 driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
@@ -54,13 +52,13 @@ driver.find_element(By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)").clic
 time.sleep(Wait_time)
 
 # Click on Sauce Labs Bolt T-Shirt Add to Cart
-driver.find_element(By.ID, "add-to-cart-sauce-labs-bolt-t-shirt)").click()
-time.sleep(Wait_time)
+# driver.find_element(By.ID, "add-to-cart-sauce-labs-bolt-t-shirt").click()
+# time.sleep(Wait_time)
 
 # Click Checkout
-driver.find_element(By.ID, "checkout").click()
-time.sleep(Wait_time)
+# driver.find_element(By.ID, "checkout").click()
+# time.sleep(Wait_time)
 
 # Click Logout
-driver.find_element(By.ID, "logout_sidebar_link").click()
-time.sleep(Wait_time)
+# driver.find_element(By.ID, "logout_sidebar_link").click()
+# time.sleep(Wait_time)
